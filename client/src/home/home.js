@@ -1,2 +1,0 @@
-import React from 'react'; //React is a open-source JS library. to develop UI (User Interface) on web application or site. Its fully component base.
-import ReactDOM from 'react-dom'; //React DOM is the glue between React and the DOM. When u want to show your react component on DOM u need to use this ReactDOM.render(); from React Dom.

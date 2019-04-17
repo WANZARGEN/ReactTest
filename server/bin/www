@@ -8,7 +8,6 @@ require('dotenv').config()
 var app = require('../app');
 var debug = require('debug')('server:server');
 var http = require('http');
-const mongoose = require('mongoose');
 
 /**
  * Get port from environment and store in Express.
@@ -16,14 +15,6 @@ const mongoose = require('mongoose');
 
 var port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
-
-/**
- *  DB Connect
- */
-mongoose.Promise = global.Promise;
-mongoose.connect(process.env.MONGO_URI)
-  .then(() => console.log('Successfully connected to mongodb'))
-  .catch(e => console.error(e));
 
 /**
  * Create HTTP server.

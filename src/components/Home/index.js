@@ -1,5 +1,7 @@
 import React, { Component } from 'react'; //React is a open-source JS library. to develop UI (User Interface) on web application or site. Its fully component base.
 
+import style from './style.scss';
+
 class Home extends Component {
 
   constructor(props) {
@@ -11,7 +13,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="Home">
+      <div className="home">
         Home 내용 ----
       </div>
     );

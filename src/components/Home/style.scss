@@ -1,0 +1,10 @@
+@import '../../styles/common';
+
+.home {
+    position: absolute;
+    left: $side-bar-w;
+    top: $top-bar-h;
+    height: calc(100vh - #{$top-bar-h});
+    width: calc(100vw - #{$side-bar-w});
+    border: 1px solid red;
+}

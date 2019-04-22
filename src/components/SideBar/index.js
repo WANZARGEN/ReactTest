@@ -1,7 +1,7 @@
 import React, { Component } from 'react'; 
 import style from './style.scss';
 
-class TopBar extends Component {
+class SideBar extends Component {
 
   constructor(props) {
     super(props);
@@ -9,11 +9,11 @@ class TopBar extends Component {
 
   render() {
     return (
-      <div className="top-bar">
-        TopBar!
+      <div className="side-bar">
+        SideBar!
       </div>
     );
   }
 }
 
-export default TopBar;
+export default SideBar;

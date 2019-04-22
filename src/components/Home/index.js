@@ -2,19 +2,37 @@ import React, { Component } from 'react'; //React is a open-source JS library. t
 
 import style from './style.scss';
 
+import data from '../../data/home.json';
+
 class Home extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      list: []
+      data: data
     };
+  }
+
+  NumberList(props) {
+    const items = props.data;
+    console.log(items)
+    const listItems = items.map((item) =>
+      <li key={item.index}>
+        {item.toString()}
+        {/** TODO:
+         *  make material ui table using item data.
+        */}
+      </li>
+    );
+    return (
+      <ul>{listItems}</ul>
+    );
   }
 
   render() {
     return (
       <div className="home">
-        Home 내용 ----
+        <this.NumberList data={this.state.data} />
       </div>
     );
   }

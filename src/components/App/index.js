@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 
-import style from './style.scss';
-
 import TopBar from '../TopBar'
 import SideBar from '../SideBar'
 import Home from '../Home'
+
+import style from './style.scss';
 
 class App extends Component {
   render() {
@@ -16,7 +16,7 @@ class App extends Component {
           <SideBar />
           <Home />
         </div>
-        
+
       </React.Fragment>
     );
   }

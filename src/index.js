@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom'; //React DOM takes care of updating the DOM to match the React elements.
+import { BrowserRouter } from "react-router-dom";
 
 import { Provider } from 'react-redux';
 import configureStore from './configureStore';
@@ -12,7 +13,9 @@ const store = configureStore()
 
 ReactDOM.render(
     <Provider store={store}>
-        <App />
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
     </Provider>, 
     document.getElementById('root')
 );//Applications built with just React usually have a single root DOM node

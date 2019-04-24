@@ -11,6 +11,8 @@ import TableCell from '@material-ui/core/TableCell';
 
 import style from './style.scss';
 
+import data from '../../data/home.json';
+
 class UserList extends Component {
 
   constructor(props) {
@@ -19,7 +21,6 @@ class UserList extends Component {
 
   handleClick(item, e) {
     e.preventDefault()
-    console.log(item)
     this.props.onIncrement(item.index);
   }
 
@@ -39,7 +40,7 @@ class UserList extends Component {
             </TableRow>
             </TableHead>
             <TableBody>
-                {this.props.data.map((user) => {
+                {data.map((user) => {
                     return (
                         <TableRow key={user.index} hover={true} className="user" onClick={this.handleClick.bind(this, user)}>
                             <TableCell children={user.index}></TableCell>

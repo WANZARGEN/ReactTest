@@ -1,4 +1,8 @@
 import React, { Component } from 'react'; 
+import { Link } from "react-router-dom";
+
+import Grid from '@material-ui/core/Grid';
+
 import style from './style.scss';
 
 class TopBar extends Component {
@@ -10,7 +14,12 @@ class TopBar extends Component {
   render() {
     return (
       <div className="top-bar">
-        TopBar!
+        <Grid container alignContent='center' alignItems='center'>
+          <Grid item xs>
+            <Link className="link" to={{ pathname: "/" }}>Go Home</Link>
+          </Grid>
+          <Grid item xs>TopBar!</Grid>
+        </Grid>
       </div>
     );
   }

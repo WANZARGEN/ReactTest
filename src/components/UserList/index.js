@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+
+import { increment } from '../../actions';
 
 import Table from '@material-ui/core/Table';
 import TableHead from '@material-ui/core/TableHead';
@@ -12,21 +15,12 @@ class UserList extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      data: props.data,
-      user: {
-          _id: undefined,
-          name: {first: undefined, last: undefined}
-      }
-    };
   }
 
   handleClick(item, e) {
     e.preventDefault()
     console.log(item)
-    const { user } = this.state.user;
-
-    // store.dispatch({ type: 'SIGN_IN' })
+    this.props.onIncrement(item.index);
   }
 
   render() {
@@ -41,10 +35,11 @@ class UserList extends Component {
                 <TableCell>age</TableCell>
                 <TableCell>company</TableCell>
                 <TableCell>email</TableCell>
+                <TableCell>count</TableCell>
             </TableRow>
             </TableHead>
             <TableBody>
-                {this.state.data.map((user) => {
+                {this.props.data.map((user) => {
                     return (
                         <TableRow key={user.index} hover={true} className="user" onClick={this.handleClick.bind(this, user)}>
                             <TableCell children={user.index}></TableCell>
@@ -53,6 +48,7 @@ class UserList extends Component {
                             <TableCell children={user.age}></TableCell>
                             <TableCell children={user.company}></TableCell>
                             <TableCell children={user.email}></TableCell>
+                            <TableCell children={this.props.counter[user.index]}></TableCell>
                         </TableRow>
                     )
                 })}
@@ -63,4 +59,14 @@ class UserList extends Component {
   }
 }
 
-export default UserList;
+const mapStateToProps = state => ({
+    counter: state.counter
+})
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        onIncrement: (idx) => dispatch(increment(idx))
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(UserList);

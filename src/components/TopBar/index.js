@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; 
 import { Link } from "react-router-dom";
+import { connect } from 'react-redux';
 
 import Grid from '@material-ui/core/Grid';
 
@@ -18,11 +19,16 @@ class TopBar extends Component {
           <Grid item xs>
             <Link className="link" to={{ pathname: "/" }}>Go Home</Link>
           </Grid>
-          <Grid item xs>TopBar!</Grid>
+          <Grid item xs>total: {this.props.total}</Grid>
         </Grid>
       </div>
     );
   }
 }
 
-export default TopBar;
+
+const mapStateToProps = state => ({
+  total: state.counter.total
+})
+
+export default connect(mapStateToProps)(TopBar);

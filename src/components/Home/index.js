@@ -1,31 +1,28 @@
 import React, { Component } from 'react'; //React is a open-source JS library. to develop UI (User Interface) on web application or site. Its fully component base.
-
-const table = <table>
-                <thead>
-                  <th>Date</th>
-                  <th>Comment</th>
-                  <th>Amount</th>
-                  <th>Unit</th>
-                  <th>For</th>
-                  <th>Payed</th>
-                </thead>
-                <tbody>
-                </tbody>
-              </table>
+import { Link } from "react-router-dom";
 
 class Home extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-      list: []
-    };
   }
 
   render() {
     return (
-      <div className="Home">
-        {table}
+      <div className="home">
+        <h2>Home</h2>
+        <ul>
+          <li>
+            <Link to={{ pathname: "/list" }}>
+              Go User List
+            </Link>
+          </li>
+          <li>
+            <Link to={{ pathname: "/" }}>
+              Go Home
+            </Link>
+          </li>
+        </ul>
       </div>
     );
   }

@@ -62,3 +62,13 @@
 ## Lifecycle
 - ```componentDidMount()```: When the component is rendered to the DOM for the firs time. 'mounting' in React.
 - ```componentWillUnmount()```: When the DOM produced by the component is removed. 'unmounting' in React. it’s very important to free up resources taken by the components when they are destroyed.
+
+
+---
+
+## Eject
+- ```create-react-app``` encapsulates all of the npm modules it is using internally, so that ```package.json``` will be very clean and simple without you having to worry about it. 
+- It will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except eject will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- ```npm run eject```
+- This is a one-way operation. Once you eject, you can’t go back!
+- Before eject, need to commit all your code.
